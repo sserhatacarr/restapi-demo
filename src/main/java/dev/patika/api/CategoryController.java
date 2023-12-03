@@ -46,14 +46,14 @@ public class CategoryController {
         return this.modelMapper.forResponse().map(category, CategoryResponse.class);
     }
 
-@DeleteMapping("/{id}")
-@ResponseStatus(value = HttpStatus.OK)
-public String delete(@PathVariable("id") int id) {
-    boolean isDeleted = categoryService.delete(id);
-    if (isDeleted) {
-        return String.format("Category with ID %d deleted", id);
-    } else {
-        return String.format("No Category with ID %d found", id);
+    @DeleteMapping("/{id}")
+    @ResponseStatus(value = HttpStatus.OK)
+    public String delete(@PathVariable("id") int id) {
+        boolean isDeleted = categoryService.delete(id);
+        if (isDeleted) {
+            return String.format("Category with ID %d deleted", id);
+        } else {
+            return String.format("No Category with ID %d found", id);
+        }
     }
-}
 }

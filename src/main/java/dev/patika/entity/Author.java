@@ -21,7 +21,6 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    private String address;
     @Column(name = "birth_date")
     private LocalDate birthDate;
     private String country;
