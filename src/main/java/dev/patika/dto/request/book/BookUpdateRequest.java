@@ -1,4 +1,4 @@
-package dev.patika.dto.response.publisher;
+package dev.patika.dto.request.book;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PublisherResponse {
-    private int id;
+public class BookUpdateRequest {
     private String name;
-    private String establishmentYear;
+    private int publishYear;
+    private int authorId;
+    private int publisherId;
 }
