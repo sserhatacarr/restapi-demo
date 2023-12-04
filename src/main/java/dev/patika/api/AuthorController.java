@@ -3,6 +3,7 @@ package dev.patika.api;
 import dev.patika.business.abstracts.IAuthorService;
 import dev.patika.core.config.modelMapper.IModelMapperService;
 import dev.patika.dto.request.author.AuthorSaveRequest;
+import dev.patika.dto.request.author.AuthorUpdateRequest;
 import dev.patika.dto.response.author.AuthorResponse;
 import dev.patika.entity.Author;
 import jakarta.validation.Valid;
@@ -37,9 +38,9 @@ public class AuthorController {
 
     @PutMapping("/{id}")
     @ResponseStatus(value = HttpStatus.OK)
-    public AuthorResponse update(@PathVariable("id") int id, @Valid @RequestBody AuthorSaveRequest authorSaveRequest) {
+    public AuthorResponse update(@PathVariable("id") int id, @Valid @RequestBody AuthorUpdateRequest authorUpdateRequest) {
         Author author = this.authorService.get(id);
-        this.modelMapper.forRequest().map(authorSaveRequest, author);
+        this.modelMapper.forRequest().map(authorUpdateRequest, author);
         authorService.update(author);
         return this.modelMapper.forResponse().map(author, AuthorResponse.class);
     }

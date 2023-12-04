@@ -1,4 +1,4 @@
-package dev.patika.dto.request.category;
+package dev.patika.dto.request.publisher;
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -8,9 +8,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class CategoryUpdateRequest {
+@NoArgsConstructor
+public class PublisherUpdateRequest {
     @Positive (message = "Id field must be positive")
     private int id;
     @NotNull (message = "Name field cannot be null")

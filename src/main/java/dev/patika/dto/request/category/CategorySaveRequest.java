@@ -10,8 +10,8 @@ import jakarta.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CategorySaveRequest {
-    @NotNull
-    @NotEmpty
+    @NotNull (message = "Name field cannot be null")
+    @NotEmpty (message = "Name field cannot be empty")
     private String name;
     private String description;
 }

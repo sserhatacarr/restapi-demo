@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -20,8 +21,8 @@ public class Publisher {
     private long id;
     private String name;
     @Column(name = "establishment_year")
-    private  int establishmentYear;
-    private String adress;
+    private LocalDate establishmentYear;
+    private String address;
 
     @OneToMany (mappedBy = "publisher", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Book> bookList;
