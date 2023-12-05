@@ -47,7 +47,7 @@ public class BookBorrowingController {
     public BookBorrowingResponse update(@PathVariable("id") int id, @Valid @RequestBody BookBorrowingUpdateRequest bookBorrowingUpdateRequest) {
         BookBorrowing bookBorrowing = this.bookBorrowingService.get(id);
         this.modelMapper.forRequest().map(bookBorrowingUpdateRequest, bookBorrowing);
-        bookBorrowingService.update(bookBorrowing);
+        bookBorrowingService.save(bookBorrowing);
         return this.modelMapper.forResponse().map(bookBorrowing, BookBorrowingResponse.class);
     }
 
